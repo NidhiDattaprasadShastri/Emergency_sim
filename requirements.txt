@@ -1,0 +1,6 @@
+numpy>=1.26
+pydantic>=2.6
+openai-agents>=0.2
+streamlit>=1.50
+plotly>=5.20
+pandas>=2.0

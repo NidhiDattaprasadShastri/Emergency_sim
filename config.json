@@ -1,0 +1,44 @@
+{
+  "seed": 42,
+  "grid_km": 20,
+  "horizon_min": 120,
+
+  "incident_rate_per_hour": 7,
+  "min_incidents": 12,
+  "max_incidents": 15,
+  "victims_per_incident": [1, 8],
+  "severity_probs": { "immediate": 0.2, "delayed": 0.3, "minor": 0.5 },
+  "deterioration_min": { "immediate": 60, "delayed": 240 },
+
+  "incident_types": {
+    "vehicle collision":  { "weight": 0.40, "needs": ["rescue"] },
+    "building fire":      { "weight": 0.25, "needs": ["fire"] },
+    "chemical leak":      { "weight": 0.10, "needs": ["hazmat"] },
+    "structural collapse":{ "weight": 0.10, "needs": ["rescue"] },
+    "medical emergency":  { "weight": 0.15, "needs": [] }
+  },
+
+  "stations": [[4, 4], [16, 4], [10, 17]],
+  "ambulance_count": 5,
+  "ambulance_als_share": 0.4,
+  "ambulance_capacity": 2,
+  "ambulance_speed_kmh": 40,
+  "traffic_factor": [0.8, 1.5],
+  "responder_types": ["fire", "rescue", "hazmat"],
+
+  "hospitals": [
+    { "hospital_id": "H-A", "name": "City Trauma Center", "kind": "trauma center",
+      "location": [10, 10], "er_beds": 8, "specialties": ["trauma", "burns", "general"],
+      "doctors": 5, "nurses": 7 },
+    { "hospital_id": "H-B", "name": "Westside General", "kind": "general",
+      "location": [5, 15], "er_beds": 6, "specialties": ["trauma", "general", "pediatrics"],
+      "doctors": 3, "nurses": 5 },
+    { "hospital_id": "H-C", "name": "Eastview Community", "kind": "community",
+      "location": [15, 14], "er_beds": 4, "specialties": ["general"],
+      "doctors": 2, "nurses": 4 }
+  ],
+  "workload_cap": { "doctor": 4, "nurse": 6 },
+
+  "llm": { "enabled": true, "model": "gpt-4o-mini" },
+  "ollama": { "base_url": "http://localhost:11434/v1", "model": "qwen2.5:3b" }
+}

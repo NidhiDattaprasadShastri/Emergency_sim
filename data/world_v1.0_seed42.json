@@ -1,0 +1,891 @@
+{
+  "version": "1.0",
+  "seed": 42,
+  "grid_km": 20.0,
+  "horizon_min": 120,
+  "ambulance_speed_kmh": 40.0,
+  "traffic_factor": [
+    0.8,
+    1.5
+  ],
+  "hospitals": [
+    {
+      "hospital_id": "H-A",
+      "name": "City Trauma Center",
+      "kind": "trauma center",
+      "location": {
+        "x": 10.0,
+        "y": 10.0
+      },
+      "er_beds": 8,
+      "beds_available": 8,
+      "specialties": [
+        "trauma",
+        "burns",
+        "general"
+      ]
+    },
+    {
+      "hospital_id": "H-B",
+      "name": "Westside General",
+      "kind": "general",
+      "location": {
+        "x": 5.0,
+        "y": 15.0
+      },
+      "er_beds": 6,
+      "beds_available": 6,
+      "specialties": [
+        "trauma",
+        "general",
+        "pediatrics"
+      ]
+    },
+    {
+      "hospital_id": "H-C",
+      "name": "Eastview Community",
+      "kind": "community",
+      "location": {
+        "x": 15.0,
+        "y": 14.0
+      },
+      "er_beds": 4,
+      "beds_available": 4,
+      "specialties": [
+        "general"
+      ]
+    }
+  ],
+  "staff": [
+    {
+      "staff_id": "H-A-D1",
+      "role": "doctor",
+      "hospital_id": "H-A",
+      "skills": [
+        "general"
+      ],
+      "workload_cap": 4,
+      "current_load": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "H-A-D2",
+      "role": "doctor",
+      "hospital_id": "H-A",
+      "skills": [
+        "burns",
+        "trauma"
+      ],
+      "workload_cap": 4,
+      "current_load": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "H-A-D3",
+      "role": "doctor",
+      "hospital_id": "H-A",
+      "skills": [
+        "general"
+      ],
+      "workload_cap": 4,
+      "current_load": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "H-A-D4",
+      "role": "doctor",
+      "hospital_id": "H-A",
+      "skills": [
+        "trauma"
+      ],
+      "workload_cap": 4,
+      "current_load": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "H-A-D5",
+      "role": "doctor",
+      "hospital_id": "H-A",
+      "skills": [
+        "burns",
+        "general"
+      ],
+      "workload_cap": 4,
+      "current_load": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "H-A-N1",
+      "role": "nurse",
+      "hospital_id": "H-A",
+      "skills": [
+        "burns",
+        "general",
+        "trauma"
+      ],
+      "workload_cap": 6,
+      "current_load": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "H-A-N2",
+      "role": "nurse",
+      "hospital_id": "H-A",
+      "skills": [
+        "burns",
+        "general"
+      ],
+      "workload_cap": 6,
+      "current_load": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "H-A-N3",
+      "role": "nurse",
+      "hospital_id": "H-A",
+      "skills": [
+        "burns",
+        "general",
+        "trauma"
+      ],
+      "workload_cap": 6,
+      "current_load": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "H-A-N4",
+      "role": "nurse",
+      "hospital_id": "H-A",
+      "skills": [
+        "burns",
+        "trauma"
+      ],
+      "workload_cap": 6,
+      "current_load": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "H-A-N5",
+      "role": "nurse",
+      "hospital_id": "H-A",
+      "skills": [
+        "burns"
+      ],
+      "workload_cap": 6,
+      "current_load": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "H-A-N6",
+      "role": "nurse",
+      "hospital_id": "H-A",
+      "skills": [
+        "burns",
+        "general",
+        "trauma"
+      ],
+      "workload_cap": 6,
+      "current_load": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "H-A-N7",
+      "role": "nurse",
+      "hospital_id": "H-A",
+      "skills": [
+        "general",
+        "trauma"
+      ],
+      "workload_cap": 6,
+      "current_load": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "H-B-D1",
+      "role": "doctor",
+      "hospital_id": "H-B",
+      "skills": [
+        "pediatrics",
+        "trauma"
+      ],
+      "workload_cap": 4,
+      "current_load": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "H-B-D2",
+      "role": "doctor",
+      "hospital_id": "H-B",
+      "skills": [
+        "general",
+        "pediatrics",
+        "trauma"
+      ],
+      "workload_cap": 4,
+      "current_load": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "H-B-D3",
+      "role": "doctor",
+      "hospital_id": "H-B",
+      "skills": [
+        "general",
+        "trauma"
+      ],
+      "workload_cap": 4,
+      "current_load": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "H-B-N1",
+      "role": "nurse",
+      "hospital_id": "H-B",
+      "skills": [
+        "pediatrics",
+        "trauma"
+      ],
+      "workload_cap": 6,
+      "current_load": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "H-B-N2",
+      "role": "nurse",
+      "hospital_id": "H-B",
+      "skills": [
+        "general",
+        "pediatrics",
+        "trauma"
+      ],
+      "workload_cap": 6,
+      "current_load": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "H-B-N3",
+      "role": "nurse",
+      "hospital_id": "H-B",
+      "skills": [
+        "pediatrics"
+      ],
+      "workload_cap": 6,
+      "current_load": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "H-B-N4",
+      "role": "nurse",
+      "hospital_id": "H-B",
+      "skills": [
+        "general",
+        "trauma"
+      ],
+      "workload_cap": 6,
+      "current_load": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "H-B-N5",
+      "role": "nurse",
+      "hospital_id": "H-B",
+      "skills": [
+        "general"
+      ],
+      "workload_cap": 6,
+      "current_load": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "H-C-D1",
+      "role": "doctor",
+      "hospital_id": "H-C",
+      "skills": [
+        "general"
+      ],
+      "workload_cap": 4,
+      "current_load": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "H-C-D2",
+      "role": "doctor",
+      "hospital_id": "H-C",
+      "skills": [
+        "general"
+      ],
+      "workload_cap": 4,
+      "current_load": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "H-C-N1",
+      "role": "nurse",
+      "hospital_id": "H-C",
+      "skills": [
+        "general"
+      ],
+      "workload_cap": 6,
+      "current_load": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "H-C-N2",
+      "role": "nurse",
+      "hospital_id": "H-C",
+      "skills": [
+        "general"
+      ],
+      "workload_cap": 6,
+      "current_load": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "H-C-N3",
+      "role": "nurse",
+      "hospital_id": "H-C",
+      "skills": [
+        "general"
+      ],
+      "workload_cap": 6,
+      "current_load": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "H-C-N4",
+      "role": "nurse",
+      "hospital_id": "H-C",
+      "skills": [
+        "general"
+      ],
+      "workload_cap": 6,
+      "current_load": 0,
+      "on_shift": true
+    }
+  ],
+  "ambulances": [
+    {
+      "ambulance_id": "AMB-1",
+      "level": "ALS",
+      "location": {
+        "x": 3.98,
+        "y": 3.73
+      },
+      "capacity": 2,
+      "status": "available"
+    },
+    {
+      "ambulance_id": "AMB-2",
+      "level": "ALS",
+      "location": {
+        "x": 16.17,
+        "y": 3.94
+      },
+      "capacity": 2,
+      "status": "available"
+    },
+    {
+      "ambulance_id": "AMB-3",
+      "level": "BLS",
+      "location": {
+        "x": 10.33,
+        "y": 17.2
+      },
+      "capacity": 2,
+      "status": "available"
+    },
+    {
+      "ambulance_id": "AMB-4",
+      "level": "BLS",
+      "location": {
+        "x": 3.81,
+        "y": 4.33
+      },
+      "capacity": 2,
+      "status": "available"
+    },
+    {
+      "ambulance_id": "AMB-5",
+      "level": "BLS",
+      "location": {
+        "x": 16.3,
+        "y": 3.89
+      },
+      "capacity": 2,
+      "status": "available"
+    }
+  ],
+  "responders": [
+    {
+      "team_id": "TEAM-FIRE",
+      "team_type": "fire",
+      "location": {
+        "x": 3.79,
+        "y": 4.18
+      },
+      "status": "available"
+    },
+    {
+      "team_id": "TEAM-RESCUE",
+      "team_type": "rescue",
+      "location": {
+        "x": 15.64,
+        "y": 3.7
+      },
+      "status": "available"
+    },
+    {
+      "team_id": "TEAM-HAZMAT",
+      "team_type": "hazmat",
+      "location": {
+        "x": 9.51,
+        "y": 17.29
+      },
+      "status": "available"
+    }
+  ],
+  "incidents": [
+    {
+      "incident_id": "INC-01",
+      "arrival_min": 18,
+      "location": {
+        "x": 13.29,
+        "y": 8.13
+      },
+      "incident_type": "chemical leak",
+      "needs_responders": [
+        "hazmat"
+      ],
+      "victims": [
+        {
+          "victim_id": "INC-01-V1",
+          "severity": "minor",
+          "deteriorates_at_min": null
+        },
+        {
+          "victim_id": "INC-01-V2",
+          "severity": "minor",
+          "deteriorates_at_min": null
+        }
+      ],
+      "priority_hint": 3,
+      "report": "Both victims are experiencing minor skin irritation and have minor burns. They are conscious and able to provide basic information."
+    },
+    {
+      "incident_id": "INC-02",
+      "arrival_min": 32,
+      "location": {
+        "x": 9.24,
+        "y": 3.23
+      },
+      "incident_type": "structural collapse",
+      "needs_responders": [
+        "rescue"
+      ],
+      "victims": [
+        {
+          "victim_id": "INC-02-V1",
+          "severity": "immediate",
+          "deteriorates_at_min": 92
+        },
+        {
+          "victim_id": "INC-02-V2",
+          "severity": "immediate",
+          "deteriorates_at_min": 92
+        },
+        {
+          "victim_id": "INC-02-V3",
+          "severity": "minor",
+          "deteriorates_at_min": null
+        }
+      ],
+      "priority_hint": 1,
+      "report": "Victims 1 and 2 are trapped under debris and not breathing. Victim 3 has a broken leg."
+    },
+    {
+      "incident_id": "INC-03",
+      "arrival_min": 41,
+      "location": {
+        "x": 8.92,
+        "y": 7.62
+      },
+      "incident_type": "building fire",
+      "needs_responders": [
+        "fire"
+      ],
+      "victims": [
+        {
+          "victim_id": "INC-03-V1",
+          "severity": "immediate",
+          "deteriorates_at_min": 101
+        },
+        {
+          "victim_id": "INC-03-V2",
+          "severity": "minor",
+          "deteriorates_at_min": null
+        }
+      ],
+      "priority_hint": 1,
+      "report": "Patient 1: Trapped and not breathing. Patient 2: Minor burns."
+    },
+    {
+      "incident_id": "INC-04",
+      "arrival_min": 46,
+      "location": {
+        "x": 5.32,
+        "y": 19.38
+      },
+      "incident_type": "vehicle collision",
+      "needs_responders": [
+        "rescue"
+      ],
+      "victims": [
+        {
+          "victim_id": "INC-04-V1",
+          "severity": "delayed",
+          "deteriorates_at_min": 286
+        },
+        {
+          "victim_id": "INC-04-V2",
+          "severity": "immediate",
+          "deteriorates_at_min": 106
+        },
+        {
+          "victim_id": "INC-04-V3",
+          "severity": "immediate",
+          "deteriorates_at_min": 106
+        },
+        {
+          "victim_id": "INC-04-V4",
+          "severity": "minor",
+          "deteriorates_at_min": null
+        },
+        {
+          "victim_id": "INC-04-V5",
+          "severity": "minor",
+          "deteriorates_at_min": null
+        },
+        {
+          "victim_id": "INC-04-V6",
+          "severity": "minor",
+          "deteriorates_at_min": null
+        }
+      ],
+      "priority_hint": 1,
+      "report": "Patient 1: severe head trauma, not breathing. Patient 2: severe head trauma, not breathing. Patient 3: leg laceration, moderate bleeding. Patient 4: arm fracture, moderate pain. Patient 5: chest contusion, moderate pain. Patient 6: minor facial contusion, no vital signs changes."
+    },
+    {
+      "incident_id": "INC-05",
+      "arrival_min": 47,
+      "location": {
+        "x": 4.05,
+        "y": 6.12
+      },
+      "incident_type": "structural collapse",
+      "needs_responders": [
+        "rescue"
+      ],
+      "victims": [
+        {
+          "victim_id": "INC-05-V1",
+          "severity": "minor",
+          "deteriorates_at_min": null
+        },
+        {
+          "victim_id": "INC-05-V2",
+          "severity": "delayed",
+          "deteriorates_at_min": 287
+        },
+        {
+          "victim_id": "INC-05-V3",
+          "severity": "delayed",
+          "deteriorates_at_min": 287
+        },
+        {
+          "victim_id": "INC-05-V4",
+          "severity": "immediate",
+          "deteriorates_at_min": 107
+        },
+        {
+          "victim_id": "INC-05-V5",
+          "severity": "minor",
+          "deteriorates_at_min": null
+        },
+        {
+          "victim_id": "INC-05-V6",
+          "severity": "delayed",
+          "deteriorates_at_min": 287
+        }
+      ],
+      "priority_hint": 1,
+      "report": "Patient 1: Trapped under debris, not breathing. Patient 2: Minor cuts and bruises. Patient 3: Broken leg, severe pain. Patient 4: Patient 5: Patient 6: Patient 7: Immediate danger, requires urgent medical attention."
+    },
+    {
+      "incident_id": "INC-06",
+      "arrival_min": 55,
+      "location": {
+        "x": 11.68,
+        "y": 13.0
+      },
+      "incident_type": "building fire",
+      "needs_responders": [
+        "fire"
+      ],
+      "victims": [
+        {
+          "victim_id": "INC-06-V1",
+          "severity": "minor",
+          "deteriorates_at_min": null
+        },
+        {
+          "victim_id": "INC-06-V2",
+          "severity": "minor",
+          "deteriorates_at_min": null
+        },
+        {
+          "victim_id": "INC-06-V3",
+          "severity": "minor",
+          "deteriorates_at_min": null
+        },
+        {
+          "victim_id": "INC-06-V4",
+          "severity": "delayed",
+          "deteriorates_at_min": 295
+        },
+        {
+          "victim_id": "INC-06-V5",
+          "severity": "minor",
+          "deteriorates_at_min": null
+        }
+      ],
+      "priority_hint": 2,
+      "report": "Patient 1: severe burns, not breathing. Patient 2: severe burns, not breathing. Patient 3: severe burns, not breathing. Patient 4: severe burns, not breathing. Patient 5: severe burns, not breathing."
+    },
+    {
+      "incident_id": "INC-07",
+      "arrival_min": 60,
+      "location": {
+        "x": 9.88,
+        "y": 6.6
+      },
+      "incident_type": "vehicle collision",
+      "needs_responders": [
+        "rescue"
+      ],
+      "victims": [
+        {
+          "victim_id": "INC-07-V1",
+          "severity": "delayed",
+          "deteriorates_at_min": 300
+        },
+        {
+          "victim_id": "INC-07-V2",
+          "severity": "immediate",
+          "deteriorates_at_min": 120
+        }
+      ],
+      "priority_hint": 1,
+      "report": "Patient 1: severe head trauma, not breathing. Patient 2: broken leg, severe bleeding."
+    },
+    {
+      "incident_id": "INC-08",
+      "arrival_min": 73,
+      "location": {
+        "x": 0.46,
+        "y": 19.17
+      },
+      "incident_type": "vehicle collision",
+      "needs_responders": [
+        "rescue"
+      ],
+      "victims": [
+        {
+          "victim_id": "INC-08-V1",
+          "severity": "minor",
+          "deteriorates_at_min": null
+        },
+        {
+          "victim_id": "INC-08-V2",
+          "severity": "immediate",
+          "deteriorates_at_min": 133
+        },
+        {
+          "victim_id": "INC-08-V3",
+          "severity": "minor",
+          "deteriorates_at_min": null
+        },
+        {
+          "victim_id": "INC-08-V4",
+          "severity": "minor",
+          "deteriorates_at_min": null
+        },
+        {
+          "victim_id": "INC-08-V5",
+          "severity": "delayed",
+          "deteriorates_at_min": 313
+        },
+        {
+          "victim_id": "INC-08-V6",
+          "severity": "minor",
+          "deteriorates_at_min": null
+        }
+      ],
+      "priority_hint": 1,
+      "report": "Patient 1: severe head trauma, not breathing. Patient 2: severe head trauma, not breathing. Patient 3: broken leg. Patient 4: minor cuts. Patient 5: severe bleeding, requires immediate attention. Patient 6: severe bleeding, requires immediate attention."
+    },
+    {
+      "incident_id": "INC-09",
+      "arrival_min": 90,
+      "location": {
+        "x": 1.65,
+        "y": 9.73
+      },
+      "incident_type": "building fire",
+      "needs_responders": [
+        "fire"
+      ],
+      "victims": [
+        {
+          "victim_id": "INC-09-V1",
+          "severity": "minor",
+          "deteriorates_at_min": null
+        }
+      ],
+      "priority_hint": 3,
+      "report": "Patient 1: Moderate burns on torso, unable to move. Minor cuts on hands. Immediate medical attention required."
+    },
+    {
+      "incident_id": "INC-10",
+      "arrival_min": 93,
+      "location": {
+        "x": 10.41,
+        "y": 8.78
+      },
+      "incident_type": "building fire",
+      "needs_responders": [
+        "fire"
+      ],
+      "victims": [
+        {
+          "victim_id": "INC-10-V1",
+          "severity": "minor",
+          "deteriorates_at_min": null
+        },
+        {
+          "victim_id": "INC-10-V2",
+          "severity": "delayed",
+          "deteriorates_at_min": 333
+        },
+        {
+          "victim_id": "INC-10-V3",
+          "severity": "delayed",
+          "deteriorates_at_min": 333
+        },
+        {
+          "victim_id": "INC-10-V4",
+          "severity": "delayed",
+          "deteriorates_at_min": 333
+        }
+      ],
+      "priority_hint": 2,
+      "report": "Victims 1-4: All conscious, complaining of smoke inhalation and minor burns. Victim 2 has a broken leg, unable to move. Victim 3 has a minor cut on arm, bleeding slightly. Victim 4 is trapped, not breathing, calling for help."
+    },
+    {
+      "incident_id": "INC-11",
+      "arrival_min": 94,
+      "location": {
+        "x": 14.54,
+        "y": 15.37
+      },
+      "incident_type": "vehicle collision",
+      "needs_responders": [
+        "rescue"
+      ],
+      "victims": [
+        {
+          "victim_id": "INC-11-V1",
+          "severity": "minor",
+          "deteriorates_at_min": null
+        },
+        {
+          "victim_id": "INC-11-V2",
+          "severity": "minor",
+          "deteriorates_at_min": null
+        },
+        {
+          "victim_id": "INC-11-V3",
+          "severity": "immediate",
+          "deteriorates_at_min": 154
+        },
+        {
+          "victim_id": "INC-11-V4",
+          "severity": "minor",
+          "deteriorates_at_min": null
+        },
+        {
+          "victim_id": "INC-11-V5",
+          "severity": "immediate",
+          "deteriorates_at_min": 154
+        },
+        {
+          "victim_id": "INC-11-V6",
+          "severity": "minor",
+          "deteriorates_at_min": null
+        },
+        {
+          "victim_id": "INC-11-V7",
+          "severity": "delayed",
+          "deteriorates_at_min": 334
+        },
+        {
+          "victim_id": "INC-11-V8",
+          "severity": "minor",
+          "deteriorates_at_min": null
+        }
+      ],
+      "priority_hint": 1,
+      "report": "Victims 1-4: Trapped under vehicle debris, not breathing. Victims 5-8: Minor bumps and bruises, bleeding. Immediate: Victims 1 and 4: Severe lacerations, bleeding heavily. Delayed: Victim 8: Internal injuries, showing signs of shock."
+    },
+    {
+      "incident_id": "INC-12",
+      "arrival_min": 102,
+      "location": {
+        "x": 16.17,
+        "y": 6.34
+      },
+      "incident_type": "vehicle collision",
+      "needs_responders": [
+        "rescue"
+      ],
+      "victims": [
+        {
+          "victim_id": "INC-12-V1",
+          "severity": "delayed",
+          "deteriorates_at_min": 342
+        },
+        {
+          "victim_id": "INC-12-V2",
+          "severity": "immediate",
+          "deteriorates_at_min": 162
+        },
+        {
+          "victim_id": "INC-12-V3",
+          "severity": "minor",
+          "deteriorates_at_min": null
+        },
+        {
+          "victim_id": "INC-12-V4",
+          "severity": "delayed",
+          "deteriorates_at_min": 342
+        },
+        {
+          "victim_id": "INC-12-V5",
+          "severity": "minor",
+          "deteriorates_at_min": null
+        }
+      ],
+      "priority_hint": 1,
+      "report": "Patient 1: severe head trauma, not breathing. Patient 2: trapped under vehicle, not breathing. Patient 3: severe leg injury, bleeding. Patient 4: minor arm injury, bleeding. Patient 5: minor cuts and bruises, conscious."
+    }
+  ]
+}
